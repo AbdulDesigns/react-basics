@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import Card from "./components/Card";
 // function App() {
 //   let i = 0;
 //   function counter() {
@@ -41,6 +41,7 @@ const App = () => {
           }}
         />
         <br />
+        <Card name="abdul" />
         <button type="submit">submit</button>
       </form>
 

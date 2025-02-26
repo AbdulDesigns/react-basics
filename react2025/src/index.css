@@ -1,4 +1,9 @@
 @import "tailwindcss";
 * {
-  font-family: "epilogue", "sans-serif";
+  font-family: "poppins", "sans-serif";
+  color: white;
+}
+
+body {
+  background-color: #1a202c;
 }
