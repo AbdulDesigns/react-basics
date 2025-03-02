@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Card from "./components/Card";
+import axios from "axios";
 // function App() {
 //   let i = 0;
 //   function counter() {
@@ -20,6 +21,12 @@ import Card from "./components/Card";
 // export default App;
 
 const App = () => {
+  //getting data from api using axios
+  async function getData() {
+    const data = await axios.get("https://picsum.photos/v2/list");
+    // let renderedData = await data.json
+    console.log(data.data);
+  }
   let i = 1;
   let [count, setCount] = useState("");
   function formHandler(e) {
@@ -47,10 +54,7 @@ const App = () => {
 
       <button
         className="bg-blue-500 text-white p-4 rounded-lg mx-4 my-4 cursor-pointer"
-        onClick={() => {
-          console.log(i);
-          setCount(count + 10);
-        }}
+        onClick={getData}
       >
         click me
       </button>
