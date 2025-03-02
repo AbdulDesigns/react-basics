@@ -1,6 +1,10 @@
-import { useEffect, useState } from "react";
-import Card from "./components/Card";
-import axios from "axios";
+// import { useEffect, useState } from "react";
+// import Card from "./components/Card";
+// import axios from "axios";
+import About from "./pages/About";
+import { Routes, Route } from "react-router-dom";
+import Services from "./pages/Services";
+
 // function App() {
 //   let i = 0;
 //   function counter() {
@@ -21,26 +25,26 @@ import axios from "axios";
 // export default App;
 
 const App = () => {
-  //getting data from api using axios
-  async function getData() {
-    const data = await axios.get("https://picsum.photos/v2/list");
-    // let renderedData = await data.json
-    console.log(data.data);
-  }
+  // //getting data from api using axios
+  // async function getData() {
+  //   const data = await axios.get("https://picsum.photos/v2/list");
+  //   // let renderedData = await data.json
+  //   console.log(data.data);
+  // }
 
-  let [count, setCount] = useState("");
-  function formHandler(e) {
-    // e.preventDefault();
-    console.log(count);
-    setCount("");
-  }
+  // let [count, setCount] = useState("");
+  // function formHandler(e) {
+  //   e.preventDefault();
+  //   console.log(count);
+  //   setCount("");
+  // }
 
-  useEffect(() => {
-    console.log("hello");
-  }, []);
+  // useEffect(() => {
+  //   console.log("hello");
+  // }, []);
   return (
     <>
-      <h1>{count}</h1>
+      {/* <h1>{count}</h1>
       <h1 className="text-5xl font-bold underline">Hello world!</h1>
       <form action="/" onSubmit={formHandler}>
         <input
@@ -61,7 +65,12 @@ const App = () => {
         onClick={getData}
       >
         click me
-      </button>
+      </button> */}
+
+      <Routes>
+        <Route path="/about" element={<About />} />
+        <Route path="/services" element={<Services />} />
+      </Routes>
     </>
   );
 };
