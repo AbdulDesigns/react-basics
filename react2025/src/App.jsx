@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Card from "./components/Card";
 import axios from "axios";
 // function App() {
@@ -27,13 +27,17 @@ const App = () => {
     // let renderedData = await data.json
     console.log(data.data);
   }
-  let i = 1;
+
   let [count, setCount] = useState("");
   function formHandler(e) {
-    e.preventDefault();
+    // e.preventDefault();
     console.log(count);
     setCount("");
   }
+
+  useEffect(() => {
+    console.log("hello");
+  }, []);
   return (
     <>
       <h1>{count}</h1>
